@@ -13,7 +13,7 @@ import BusBookingPage from './pages/bus.jsx'
 import CabBookingPage from './pages/cabs.jsx'
 import AlertPage from './pages/alert.jsx'
 import ProfilePage from './pages/Profile.jsx'
-import AdminDashboard from './pages/AdminDashboard.jsx'
+import AdminDashboard from './pages/Admindashboard.jsx'
 
 import AdminGuard from './components/common/AdminGuard'
 import ProtectedRoute from './components/common/Protectedroute.jsx'
