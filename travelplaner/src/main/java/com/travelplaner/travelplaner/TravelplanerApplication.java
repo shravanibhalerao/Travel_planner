@@ -1,0 +1,15 @@
+package com.travelplaner.travelplaner;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.scheduling.annotation.EnableAsync;
+@EnableAsync
+@SpringBootApplication
+public class TravelplanerApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(TravelplanerApplication.class, args);
+	}
+
+}
+ 
