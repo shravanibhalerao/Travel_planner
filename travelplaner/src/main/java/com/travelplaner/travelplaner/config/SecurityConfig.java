@@ -38,28 +38,31 @@ public class SecurityConfig {
                 session.sessionCreationPolicy(SessionCreationPolicy.STATELESS)
             )
             .authorizeHttpRequests(auth -> auth
-                .requestMatchers(HttpMethod.OPTIONS, "/**").permitAll()
+    .requestMatchers(HttpMethod.OPTIONS, "/**").permitAll()
 
-                // Public endpoints
-                .requestMatchers("/api/auth/**").permitAll()
-                .requestMatchers("/ws/**").permitAll()
+    // Allow root & health
+    .requestMatchers("/", "/actuator/**").permitAll()
 
-                // Public GET only for browsing
-                .requestMatchers(HttpMethod.GET, "/api/tours/**").permitAll()
-                .requestMatchers(HttpMethod.GET, "/api/hotels/**").permitAll()
-                .requestMatchers(HttpMethod.GET, "/api/flights/**").permitAll()
-                .requestMatchers(HttpMethod.GET, "/api/buses/**").permitAll()
-                .requestMatchers(HttpMethod.GET, "/api/cabs/**").permitAll()
-                .requestMatchers(HttpMethod.GET, "/api/packages/**").permitAll()
-                .requestMatchers(HttpMethod.GET, "/api/trains/**").permitAll()
-                .requestMatchers("/api/contact/**").permitAll() 
+    // Public endpoints
+    .requestMatchers("/api/auth/**").permitAll()
+    .requestMatchers("/ws/**").permitAll()
 
-                // Protected endpoints
-                .requestMatchers("/api/bookings/**").authenticated()
-                .requestMatchers("/api/alerts/**").authenticated()
+    // Public GET browsing
+    .requestMatchers(HttpMethod.GET, "/api/tours/**").permitAll()
+    .requestMatchers(HttpMethod.GET, "/api/hotels/**").permitAll()
+    .requestMatchers(HttpMethod.GET, "/api/flights/**").permitAll()
+    .requestMatchers(HttpMethod.GET, "/api/buses/**").permitAll()
+    .requestMatchers(HttpMethod.GET, "/api/cabs/**").permitAll()
+    .requestMatchers(HttpMethod.GET, "/api/packages/**").permitAll()
+    .requestMatchers(HttpMethod.GET, "/api/trains/**").permitAll()
+    .requestMatchers("/api/contact/**").permitAll()
 
-                .anyRequest().authenticated()
-            )
+    // Protected
+    .requestMatchers("/api/bookings/**").authenticated()
+    .requestMatchers("/api/alerts/**").authenticated()
+
+    .anyRequest().authenticated()
+)
             .formLogin(form -> form.disable())
             .httpBasic(basic -> basic.disable())
             .addFilterBefore(jwtAuthFilter, UsernamePasswordAuthenticationFilter.class); // ✅ REMOVED (Filter) casting
