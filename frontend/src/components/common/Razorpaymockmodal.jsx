@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import upiLogo from "../../assets/upiLogo.jpg";
 import gpay from "../../assets/GPay.png";
-import phonepeLogo from "../../assets/phonepe.png";
-import paytmLogo from "../../assets/paytm.png";
+import phonepeLogo from "../../assets/PhonePe.png";
+import paytmLogo from "../../assets/Paytm.png";
 
 const CARD_TYPES = {
   visa: { label: 'VISA', color: '#1a1f71', logo: '💳' },
