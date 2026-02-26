@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import upiLogo from "../../assets/upiLogo.jpg";
-import gpayLogo from "../../assets/Gpay.png";
+import gpay from "../../assets/gpay.png";
 import phonepeLogo from "../../assets/phonepe.png";
 import paytmLogo from "../../assets/paytm.png";
 
@@ -254,22 +254,22 @@ const RazorpayMockModal = ({ show, onClose, amount, onPaymentSuccess }) => {
                       }}>
                         <div style={{ marginBottom: '6px' }}>
   <img
-    src={
-      app === "GPay"
-        ? gpayLogo
-        : app === "PhonePe"
-        ? phonepeLogo
-        : app === "Paytm"
-        ? paytmLogo
-        : upiLogo
-    }
-    alt={app}
-    style={{
-      width: "40px",
-      height: "40px",
-      objectFit: "contain"
-    }}
-  />
+  src={
+    app === "GPay"
+      ? gpay
+      : app === "PhonePe"
+      ? phonepeLogo
+      : app === "Paytm"
+      ? paytmLogo
+      : upiLogo
+  }
+  alt={app}
+  style={{
+    width: "40px",
+    height: "40px",
+    objectFit: "contain"
+  }}
+/>
 </div>
                         {app}
                       </div>
