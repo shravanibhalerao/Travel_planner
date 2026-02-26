@@ -109,7 +109,11 @@ travelplaner/
 
 ```
 bash
+<<<<<<< HEAD
 [git clone <repository-url>](https://github.com/shravanibhalerao/Travel_planner.git)
+=======
+git clone <repository-url>
+>>>>>>> 311487e (Added Dockerfile for Render deployment)
 cd travelplaner
 ```
 
@@ -288,6 +292,7 @@ npm run build
 npm run preview
 ```
 
+<<<<<<< HEAD
 ---
 
 ## 📜 License
@@ -309,3 +314,16 @@ For issues, suggestions, or questions, please open an issue in this repository
 or contact the development team.
 
 ---
+=======
+## License
+
+This project is for educational purposes.
+
+## Authors
+
+- Travel Planner Team
+
+## Support
+
+For issues or questions, please contact the development team.
+>>>>>>> 311487e (Added Dockerfile for Render deployment)
