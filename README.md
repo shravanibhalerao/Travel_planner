@@ -109,7 +109,7 @@ travelplaner/
 
 ```
 bash
-git clone <repository-url>
+[git clone <repository-url>](https://github.com/shravanibhalerao/Travel_planner.git)
 cd travelplaner
 ```
 
