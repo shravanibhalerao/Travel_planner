@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import upiLogo from "../../assets/upiLogo.jpg";
-import gpay from "../../assets/gpay.png";
+import gpay from "../../assets/GPay.png";
 import phonepeLogo from "../../assets/phonepe.png";
 import paytmLogo from "../../assets/paytm.png";
 
