@@ -79,7 +79,7 @@ export default function RegisterPage() {
     setApiError('');
 
     try {
-      const response = await fetch('http://localhost:8082/api/auth/register', {
+      const response = await fetch('https://travel-planner-cf8s.onrender.com/api/auth/register', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

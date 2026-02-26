@@ -191,7 +191,7 @@ const StatusMsg = styled(motion.p)`
   color: ${({ $success }) => $success ? '#16a34a' : '#dc2626'};
 `;
 
-const API_BASE = "http://localhost:8082";
+const API_BASE = "https://travel-planner-cf8s.onrender.com";
 
 function Home() {
   const itemVariants = {

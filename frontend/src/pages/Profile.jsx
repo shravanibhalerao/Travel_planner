@@ -37,7 +37,7 @@ export default function ProfilePage() {
     setLoadingBookings(true);
     try {
       const token = localStorage.getItem('token');
-      const response = await fetch('http://localhost:8082/api/bookings/my-tickets', {
+      const response = await fetch('https://travel-planner-cf8s.onrender.com/api/bookings/my-tickets', {
         headers: { Authorization: `Bearer ${token}` }
       });
       if (!response.ok) throw new Error('Failed to fetch');
@@ -57,7 +57,7 @@ export default function ProfilePage() {
     try {
       const token = localStorage.getItem('token');
       const response = await fetch(
-        `http://localhost:8082/api/bookings/cancel/${ticketId}`,
+        `https://travel-planner-cf8s.onrender.com/api/bookings/cancel/${ticketId}`,
         { method: 'PUT', headers: { Authorization: `Bearer ${token}` } }
       );
       if (!response.ok) throw new Error('Cancel failed');

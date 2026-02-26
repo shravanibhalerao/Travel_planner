@@ -5,7 +5,7 @@ import RazorpayMockModal from '../components/common/Razorpaymockmodal.jsx';
 import Footer from '../components/common/Footer.jsx';
 import xyza from '../assets/holiday.png';
 
-const API = 'http://localhost:8082';
+const API = 'https://travel-planner-cf8s.onrender.com';
 
 const inputStyle = {
   width: '100%', padding: '12px', border: '1px solid #ddd',

@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-const API = 'http://localhost:8082';
+const API = 'https://travel-planner-cf8s.onrender.com';
 
 export function useBooking() {
   const [showBookingModal, setShowBookingModal] = useState(false);

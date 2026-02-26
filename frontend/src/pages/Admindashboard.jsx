@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-const API = 'http://localhost:8082';
+const API = 'https://travel-planner-cf8s.onrender.com';
 
 // ── Helpers ──────────────────────────────────────────────────────────────────
 const getToken = () => localStorage.getItem('token');

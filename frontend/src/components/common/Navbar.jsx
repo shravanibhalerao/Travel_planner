@@ -8,7 +8,7 @@ function Navbar() {
   const { user, logout } = useAuth();
 const [unreadCount, setUnreadCount] = useState(0);
 useEffect(() => {
-  fetch("http://localhost:8082/api/bookings/my", {
+  fetch("https://travel-planner-cf8s.onrender.com/api/bookings/my", {
     headers: {
       Authorization: `Bearer ${localStorage.getItem("token")}`
     }

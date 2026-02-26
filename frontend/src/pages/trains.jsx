@@ -5,7 +5,7 @@ import RazorpayMockModal from '../components/common/Razorpaymockmodal.jsx';
 import Footer from '../components/common/Footer.jsx';
 import xyzb from '../assets/rail.png';
 
-const API = 'http://localhost:8082';
+const API = 'https://travel-planner-cf8s.onrender.com';
 
 // ── Auth helpers ─────────────────────────────────────────────────────────────
 const isLoggedIn = () => {

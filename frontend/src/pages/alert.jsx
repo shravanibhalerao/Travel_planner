@@ -4,8 +4,8 @@ import { Client } from '@stomp/stompjs';
 import Footer from "../components/common/Footer.jsx";
 
 // ─── STOMP/WebSocket endpoint ─────────────────────────────────────────────────
-const WS_URL = 'http://localhost:8082/ws';
-const API    = 'http://localhost:8082';
+const WS_URL = 'https://travel-planner-cf8s.onrender.com/ws';
+const API    = 'https://travel-planner-cf8s.onrender.com';
 
 // ─── Icons ────────────────────────────────────────────────────────────────────
 const Icon = ({ type, color, size = 22 }) => {

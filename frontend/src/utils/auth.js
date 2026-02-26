@@ -1,4 +1,4 @@
-const API = 'http://localhost:8082';
+const API = 'https://travel-planner-cf8s.onrender.com';
 
 // ── LOGIN ─────────────────────────────────────────────────────────────────────
 export async function login(email, password) {

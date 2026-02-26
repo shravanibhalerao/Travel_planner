@@ -3,7 +3,7 @@
 // ══════════════════════════════════════════════════════════════════════════════
 import React, { useState, useEffect } from 'react';
 
-const API = 'http://localhost:8082';
+const API = 'https://travel-planner-cf8s.onrender.com';
 const getToken = () => localStorage.getItem('token');
 const authHeaders = () => ({ 'Content-Type': 'application/json', Authorization: `Bearer ${getToken()}` });
 
