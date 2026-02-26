@@ -288,14 +288,24 @@ npm run build
 npm run preview
 ```
 
-## License
+---
 
-This project is for educational purposes.
+## 📜 License
 
-## Authors
+This project is developed for **educational purposes only**.
 
-- Travel Planner Team
+---
 
-## Support
+## 👩‍💻 Authors
 
-For issues or questions, please contact the development team.
+**Travel Planner Team**  
+- Shravani Bhalerao  
+
+---
+
+## 📩 Support
+
+For issues, suggestions, or questions, please open an issue in this repository  
+or contact the development team.
+
+---
