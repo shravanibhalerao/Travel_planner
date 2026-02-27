@@ -77,28 +77,34 @@ const getTimeCategory = (time) => {
 
   // ── Core fetch ────────────────────────────────────────────────────────────
   const fetchFlights = useCallback(async (from, to) => {
-    setLoading(true);
-    try {
-      const res = await fetch(
-        `${API}/api/flights/search?source=${encodeURIComponent(from)}&destination=${encodeURIComponent(to)}`
-      );
-      if (!res.ok) throw new Error('Search failed');
-      const data = await res.json();
-      setFlights(data);
-      setShowResults(true);
-    } catch (err) {
-      console.error(err);
-      setFlights([]);
-      setShowResults(true);
-    } finally {
-      setLoading(false);
+  if (!from || !to) return;
+
+  setLoading(true);
+  try {
+    const res = await fetch(
+      `${API}/api/flights/search?source=${encodeURIComponent(from)}&destination=${encodeURIComponent(to)}`
+    );
+
+    if (!res.ok) {
+      console.log("Search failed:", res.status);
+      return;
     }
-  }, []);
 
-  useEffect(() => {
+    const data = await res.json();
+    setFlights(data);
+    setShowResults(true);
+
+  } catch (err) {
+    console.error(err);
+  } finally {
+    setLoading(false);
+  }
+}, []);
+ useEffect(() => {
+  if (searchParams.from && searchParams.to) {
     fetchFlights(searchParams.from, searchParams.to);
-  }, []); // eslint-disable-line
-
+  }
+}, []);
   const handleSearch = useCallback((e) => {
     e.preventDefault();
     fetchFlights(searchParams.from, searchParams.to);
