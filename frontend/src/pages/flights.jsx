@@ -101,9 +101,22 @@ const getTimeCategory = (time) => {
   }
 }, []);
  useEffect(() => {
-  if (searchParams.from && searchParams.to) {
-    fetchFlights(searchParams.from, searchParams.to);
-  }
+  const fetchAllFlights = async () => {
+    setLoading(true);
+    try {
+      const res = await fetch(`${API}/api/flights`);
+      if (!res.ok) throw new Error("Failed");
+      const data = await res.json();
+      setFlights(data);
+      setShowResults(true);
+    } catch (err) {
+      console.error(err);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  fetchAllFlights();
 }, []);
   const handleSearch = useCallback((e) => {
     e.preventDefault();
