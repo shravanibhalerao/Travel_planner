@@ -34,22 +34,40 @@ export default function ProfilePage() {
   }, [user]);
 
   const fetchMyTickets = async () => {
-    setLoadingBookings(true);
-    try {
-      const token = localStorage.getItem('token');
-      const response = await fetch('https://travel-planner-cf8s.onrender.com/api/bookings/my-tickets', {
-        headers: { Authorization: `Bearer ${token}` }
-      });
-      if (!response.ok) throw new Error('Failed to fetch');
-      const data = await response.json();
-      setBookings(data);
-    } catch (err) {
-      console.error('Error fetching tickets:', err);
-      setBookings([]);
-    }
-    setLoadingBookings(false);
-  };
+  setLoadingBookings(true);
 
+  const token = localStorage.getItem("token");
+
+  if (!token) {
+    console.log("User not logged in");
+    setLoadingBookings(false);
+    return;
+  }
+
+  try {
+    const response = await fetch(
+      "https://travel-planner-cf8s.onrender.com/api/bookings/my-tickets",
+      {
+        headers: { Authorization: `Bearer ${token}` }
+      }
+    );
+
+    if (!response.ok) {
+      console.log("Failed:", response.status);
+      setBookings([]);
+      return;
+    }
+
+    const data = await response.json();
+    setBookings(data);
+
+  } catch (err) {
+    console.error("Error fetching tickets:", err);
+    setBookings([]);
+  }
+
+  setLoadingBookings(false);
+};
   // ─── Cancel booking ───
   const handleCancel = async (ticketId) => {
     if (!window.confirm('Are you sure you want to cancel this booking?')) return;

@@ -8,16 +8,33 @@ function Navbar() {
   const { user, logout } = useAuth();
 const [unreadCount, setUnreadCount] = useState(0);
 useEffect(() => {
+  const token = localStorage.getItem("token");
+
+  if (!token) {
+    console.log("No token found");
+    return;
+  }
+
   fetch("https://travel-planner-cf8s.onrender.com/api/bookings/my", {
     headers: {
-      Authorization: `Bearer ${localStorage.getItem("token")}`
+      Authorization: `Bearer ${token}`
     }
   })
-    .then(res => res.json())
+    .then(res => {
+      if (!res.ok) {
+        console.log("Failed:", res.status);
+        return null;   // 🔥 Stop here if 403
+      }
+      return res.json();
+    })
     .then(data => {
+      if (!data) return;  // 🔥 Prevent crash
+
       const unread = data.filter(b => b.status === "CONFIRMED").length;
       setUnreadCount(unread);
-    });
+    })
+    .catch(err => console.error("Error:", err));
+
 }, []);
   return (
     <>
